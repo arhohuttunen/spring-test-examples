@@ -1,6 +1,6 @@
 package com.codingrevolution.spring.service;
 
-import com.codingrevolution.spring.repository.Order;
+import com.codingrevolution.spring.model.Order;
 import com.codingrevolution.spring.repository.OrderRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -22,12 +22,12 @@ class OrderServiceTest {
     }
 
     @Test
-    void saveCreatedDateForOrder() {
+    void createOrderSetsTheCreationDate() {
         Order order = new Order();
         when(orderRepository.save(any(Order.class))).then(returnsFirstArg());
 
         Order savedOrder = orderService.create(order);
 
-        assertNotNull(savedOrder.getDateCreated());
+        assertNotNull(savedOrder.getCreationDate());
     }
 }

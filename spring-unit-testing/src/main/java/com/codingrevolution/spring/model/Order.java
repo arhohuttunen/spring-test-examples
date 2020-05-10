@@ -1,4 +1,4 @@
-package com.codingrevolution.spring.repository;
+package com.codingrevolution.spring.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,7 +12,7 @@ public class Order {
     @Id
     @GeneratedValue
     private Long id;
-    private LocalDateTime dateCreated;
+    private LocalDateTime creationDate;
 
     public Long getId() {
         return id;
@@ -22,11 +22,11 @@ public class Order {
         this.id = id;
     }
 
-    public LocalDateTime getDateCreated() {
-        return dateCreated;
+    public LocalDateTime getCreationDate() {
+        return creationDate;
     }
 
-    public void setDateCreated(LocalDateTime dateCreated) {
-        this.dateCreated = dateCreated;
+    public void setCreationDate(LocalDateTime creationDate) {
+        this.creationDate = creationDate;
     }
 }

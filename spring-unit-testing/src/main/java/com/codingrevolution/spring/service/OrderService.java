@@ -1,6 +1,6 @@
 package com.codingrevolution.spring.service;
 
-import com.codingrevolution.spring.repository.Order;
+import com.codingrevolution.spring.model.Order;
 import com.codingrevolution.spring.repository.OrderRepository;
 import org.springframework.stereotype.Service;
 
@@ -15,7 +15,7 @@ public class OrderService {
     }
 
     public Order create(Order order) {
-        order.setDateCreated(LocalDateTime.now());
+        order.setCreationDate(LocalDateTime.now());
         return orderRepository.save(order);
     }
 }
